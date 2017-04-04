@@ -70,7 +70,7 @@ class Racer
   def created_at
     nil
   end
-  
+
   def updated_at
     nil
   end
