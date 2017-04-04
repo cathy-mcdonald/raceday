@@ -1,6 +1,7 @@
 # Racer model class which integrates with MongoDB
 class Racer
   include Mongoid::Document
+  include ActiveModel::Model
 
   attr_accessor :id, :number, :first_name, :last_name, :gender, :group, :secs
 
@@ -60,5 +61,17 @@ class Racer
 
   def destroy
     collection.find(_id: BSON::ObjectId.from_string(@id)).delete_one
+  end
+
+  def persisted?
+    !@id.nil?
+  end
+
+  def created_at
+    nil
+  end
+  
+  def updated_at
+    nil
   end
 end

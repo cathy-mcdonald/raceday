@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'racers#index'
+  
+  resources :racers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
